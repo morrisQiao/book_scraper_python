@@ -35,7 +35,7 @@ def get_book_detail_info(url):
     page.close()
     title_tag = book_detail_soup.find(class_="single-title")
     title = title_tag.string
-    isbn_key_tag = book_detail_soup.find(text="Isbn:").parent
+    isbn_key_tag = book_detail_soup.find(text="ISBN-10:").parent
     isbn_tag = isbn_key_tag.find_next_sibling()
     isbn = isbn_tag.string.strip() # Remove the whitespace with the strip method
     return { 'title': title, 'isbn': isbn }
