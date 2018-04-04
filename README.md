@@ -11,5 +11,5 @@ A  web scraper for get the books info from allitbooks.com and amazon.com
 
 * install requests 
 
-`pip3 install requests
+`pip3 install requests`
 
