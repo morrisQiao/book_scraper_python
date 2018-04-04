@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
+import csv
 
 # Get the next page url from the current page url
 def get_next_page_url(url):
@@ -59,10 +60,11 @@ def run():
 
     scapping(url)
     print(len(book_info_list))
-    save(book_info_list)
-
-
-
-
+    with open('book_info_list.csv', 'w', newline='') as f:
+        headers = ['title', 'isbn']
+        writer = csv.DictWriter(f, headers)
+        writer.writeheader()
+        for info in book_info_list:
+            writer.writerow(info)
 
 run()
